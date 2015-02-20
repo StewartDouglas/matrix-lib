@@ -46,16 +46,14 @@ void Matrix::print(){
 // populate your matrix
 void Matrix::populate(){
 
-	// for(int r = 0; r < rows; ++r){
-	// 	for(int c = 0; c < columns; ++c){
-	// 		int input_value;
-	// 		std::cout << "Current at position [" << r << "][" << c << "]" << ", New value: \t";
-	// 		std::cin >> input_value;
-	// 		m[r][c] = input_value;
-	// 	}
-	// }
+	for(int r = 0; r < n_rows; ++r){
+		for(int c = 0; c < n_columns; ++c){
+			std::cout << "Current at position [" << r << "][" << c << "]" << ", New value: \t";
+			std::cin >> data[r][c];
+		}
+	}
 
-	std::cout << "placeholder" << std::endl;
+
 }
 
 
