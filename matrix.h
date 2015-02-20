@@ -1,43 +1,49 @@
 #ifndef __MATRIX_H_INCLUDED__
 #define __MATRIX_H_INCLUDED__
 
+#include <iostream>
 #include <cstdlib>
+#include <vector>
 
-typedef int** matrix;
+//typedef std::vector<int> column;
 
-// generate an n x m matrix
-matrix generate_matrix(int rows, int columns);
+class Matrix {
 
+public:
 
-// or, generate a random matrix
-matrix generate_random_matrix();
+	// generate an n x m matrix
+	Matrix(int rows, int columns);
 
+	// populate with random values between 0 and 9
+	void randomise();
 
-// populate your matrix
-matrix populate_matrix(matrix m, int rows, int columns);
+	// print the entries of the matrix
+	void print();
 
-// randomly populate your matrix
-matrix populate_random_matrix(matrix m, int rows, int columns);
+	// populate your matrix
+	void populate();
 
-// determine whether matrix is invertible 
-bool invertible(matrix m, int rows);
+	// determine whether matrix is invertible 
+	bool invertible();
 
+	// calculate determinant of matrix
+	// note: for non-square matrices the determinant is not defined
+	int determinant();
 
-// calculate determinant of matrix
-// note: no need for columns, for non-square matrices the determinant is not defined
-int calculate_determinant(matrix m, int rows);
+	// calculate eigenvalues
 
+	// calculate eigenvectors
 
-// calculate eigenvalues
+	// orthonormal basis
 
+	// SVD
 
-// calculate eigenvectors
+private:
+	int n_rows;
+	int n_columns;
+	int** data;
 
-
-// orthonormal basis
-
-
-// SVD
+};
 
 #endif	
 
